@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Prática - Consultoria Vish S.A.</title>
+    <style>
+        :root {
+            --primary-color: #004A8D;
+            --secondary-color: #F7941E;
+            --bg-color: #f4f7f6;
+            --box-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #dddddd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--box-bg);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .case-box {
+            background-color: #e9f2f9;
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+
+        .case-box h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .email-example {
+            background: #fff;
+            border: 1px dashed #ccc;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-style: italic;
+            color: #444;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .help-text {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 5px rgba(247, 148, 30, 0.3);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        /* Estilos do Compositor de E-mail */
+        .email-composer {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .email-row {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding: 10px 15px;
+            background: #fafafa;
+        }
+
+        .email-row label {
+            margin: 0;
+            width: 70px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .email-row input {
+            border: none;
+            padding: 5px;
+            background: transparent;
+            flex-grow: 1;
+            box-shadow: none;
+            border-radius: 0;
+        }
+        
+        .email-row input:focus {
+            box-shadow: none;
+        }
+
+        .email-row input:disabled {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .email-body {
+            border: none;
+            border-radius: 0;
+            padding: 15px;
+        }
+        
+        .email-body:focus {
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #003366;
+        }
+
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        #mensagem-sucesso {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid #c3e6cb;
+            font-weight: bold;
+        }
+
+        .loader {
+            display: none;
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Avaliação Prática — Consultoria Vish S.A.</h1>
+    <div class="subtitle">Componente: Comunicação e Comportamento Organizacional</div>
+
+    <div class="case-box">
+        <h3>O Cenário (Situação-Problema)</h3>
+        <p>Vocês foram contratados como Consultores de Gestão da <strong>Vish S.A.</strong>. O supervisor administrativo, <strong>Sr. Nicolas Leal</strong>, chamou a dupla para resolver um problema com a colaboradora Ana.</p>
+        <p>Ana possui excelente conhecimento técnico, mas enfrenta dificuldades no trabalho em equipe. Ela reage impulsivamente sob pressão (gerando conflitos) e as tarefas do setor estão atrasadas porque os funcionários atuam como um "grupo isolado", sem colaboração.</p>
+        <p>Além disso, Ana frequentemente usa uma comunicação inadequada com clientes importantes. Veja o e-mail que ela enviou ontem para a diretoria de um cliente corporativo:</p>
+        
+        <div class="email-example">
+            "Fala, chefia! Beleza? Véi, sobre aquele B.O. de ontem com o contrato, a equipe deu um migué e não conseguiu terminar a parada a tempo. Tá osso trampar com essa galera, o ritmo tá mó devagar, sacou? 🙄 Mas relaxa, amanhã a gente bota pra quebrar e corre atrás do prejuízo. Qualquer fita, me dá um salve no Zap! ✌️"
+        </div>
+    </div>
+
+    <form id="avaliacao-form">
+        <div class="form-group">
+            <label for="nome_dupla">Nome completo dos integrantes da dupla:</label>
+            <input type="text" id="nome_dupla" name="nome_dupla" placeholder="Ex: João da Silva e Maria Souza" required>
+        </div>
+
+        <div class="form-group">
+            <label for="diagnostico_1">Parte 1.1 — Diagnóstico de Competências</label>
+            <span class="help-text">Diferencie Soft Skills de Hard Skills. Quais competências socioemocionais (soft skills) Ana precisa desenvolver com urgência? Justifique.</span>
+            <textarea id="diagnostico_1" name="diagnostico_1" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="diagnostico_2">Parte 1.2 — Dinâmica de Trabalho</label>
+            <span class="help-text">Explique a diferença entre grupo e equipe. Como a falta do Modelo 3C (Comunicação, Cooperação e Coordenação) está afetando o setor da Vish S.A.?</span>
+            <textarea id="diagnostico_2" name="diagnostico_2" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Parte 2 — A Intervenção Executiva (E-mail Formal)</label>
+            <span class="help-text">Redija um e-mail formal direcionado ao supervisor. Proponha 3 ações concretas para desenvolver a inteligência emocional de Ana e melhorar a colaboração da equipe, justificando os impactos. Adeque o vocabulário para a linguagem corporativa formal.</span>
+            
+            <div class="email-composer">
+                <div class="email-row">
+                    <label>Para:</label>
+                    <input type="text" value="nicolas.leal@vish.com.br" disabled>
+                </div>
+                <div class="email-row">
+                    <label>Assunto:</label>
+                    <input type="text" id="assunto_email" name="assunto_email" placeholder="Digite o título do e-mail..." required>
+                </div>
+                <textarea id="corpo_email" name="corpo_email" class="email-body" rows="8" placeholder="Escreva o corpo do e-mail aqui (inclua vocativo, propostas, despedida e assinatura)..." required></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="reflexao">Parte 3 — Reflexão Pessoal (Consenso da dupla)</label>
+            <span class="help-text">Escrevam um parágrafo sobre o que aprenderam nesta UC e como pretendem aplicar as competências socioemocionais no desenvolvimento profissional de vocês.</span>
+            <textarea id="reflexao" name="reflexao" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" id="btn-enviar">Enviar Avaliação</button>
+        <div class="loader" id="loader">Enviando dados, por favor aguarde...</div>
+    </form>
+
+    <div id="mensagem-sucesso">
+        ✅ Avaliação enviada com sucesso! O professor já recebeu as respostas.
+    </div>
+</div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyrIhYlRoWop7nat0JGvrxj5Rck36yvXmaxzr7pTxtE1POzGdo-Reyjq70hVGBRXKf7dA/exec';
+    
+    const form = document.getElementById('avaliacao-form');
+    const btnEnviar = document.getElementById('btn-enviar');
+    const loader = document.getElementById('loader');
+    const msgSucesso = document.getElementById('mensagem-sucesso');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        
+        btnEnviar.disabled = true;
+        btnEnviar.style.display = 'none';
+        loader.style.display = 'block';
+
+        const formData = new FormData(form);
+
+        fetch(scriptURL, { method: 'POST', body: formData })
+            .then(response => {
+                loader.style.display = 'none';
+                msgSucesso.style.display = 'block';
+                form.reset();
+            })
+            .catch(error => {
+                console.error('Erro!', error.message);
+                alert('Houve um erro ao enviar. Por favor, verifique a conexão e tente novamente.');
+                btnEnviar.disabled = false;
+                btnEnviar.style.display = 'block';
+                loader.style.display = 'none';
+            });
+    });
+</script>
+
+</body>
+</html>
